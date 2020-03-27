@@ -1,23 +1,17 @@
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core';
 import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './{{pascalCase name}}.module.css';
 
-const {{pascalCase name}} = props => {
-return (
-<div className={styles.root}>
-</div>
+interface Props {};
+
+const styles = css``;
+
+const {{pascalCase name}}: React.FC<Props> = () => {
+  return (
+  <div css={styles}>
+  </div>
 );
 };
 
-{{pascalCase name}}.defaultProps = {
 
-};
-
-{{pascalCase name}}.propTypes = {
-
-};
-
-export default {{pascalCase name}};</pre>
-<pre>.root {
-  
-}
+export default {{pascalCase name}};
