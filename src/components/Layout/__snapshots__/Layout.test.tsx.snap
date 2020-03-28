@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> renders 1`] = `
+<div>
+  <div
+    class="layout"
+  >
+    <div
+      class="toolbar"
+    >
+      Toolbar
+      
+    </div>
+     Test Children 
+  </div>
+</div>
+`;
