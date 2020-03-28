@@ -2,20 +2,16 @@
 
 .toolbar {
   background-color: $appColor1;
+  color: $fontColorWhite;
   height: 40px;
 
   button {
     background-color: transparent;
     margin: 0;
-    padding: 10;
+    padding: 7px 10px;
     border: none;
     margin-bottom: 10px;
     cursor: pointer;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .toolbar {
-    display: none;
+    color: $fontColorWhite;
   }
 }

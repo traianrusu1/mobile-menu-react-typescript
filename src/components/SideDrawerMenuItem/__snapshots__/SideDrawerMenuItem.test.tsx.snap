@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SideDrawerMenuItem /> renders 1`] = `
+<div>
+  <div
+    class="sideDrawerMenuItem"
+  >
+    SideDrawerMenuItem
+    
+  </div>
+</div>
+`;

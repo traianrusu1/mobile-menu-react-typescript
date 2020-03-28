@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './SideDrawer.module.scss';
+import { SideDrawerMenuItem } from '../../interfaces/SideDrawerMenuItem';
+import SideDrawerMenu from '../SideDrawerMenu';
 
 interface Props {
-  myProp: string;
+  menuItems: SideDrawerMenuItem[];
 }
 
-const SideDrawer: React.FC<Props> = ({ myProp }: Props) => {
+const SideDrawer: React.FC<Props> = ({ menuItems }: Props) => {
   return (
-    <div className={ styles.sideDrawer }>
-      SideDrawer
-      {myProp}
+    <div className={styles.sideDrawer}>
+      <SideDrawerMenu menuItems={menuItems} />
     </div>
   );
 };

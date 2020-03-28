@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Layout.module.css';
 import MobileMenu from '../MobileMenu';
+import menuItems from '../../utils/menuItems';
 
 interface Props {
   children: React.ReactNode;
@@ -9,8 +10,7 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <div className={styles.layout}>
-      <MobileMenu myProp="" />
-
+      <MobileMenu menuItems={menuItems} />
       {children}
     </div>
   );
