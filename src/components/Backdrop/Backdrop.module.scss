@@ -1,0 +1,11 @@
+@import '../MobileMenu/mobileMenuVariables';
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: $toolbarHeight;
+  background-color: rgba(100, 100, 100, 0.5);
+}

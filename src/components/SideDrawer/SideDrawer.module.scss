@@ -9,4 +9,5 @@ $drawerWidth: 200px;
   width: $drawerWidth;
   min-height: 600px;
   background-color: $appColor1;
+  z-index: 200;
 }

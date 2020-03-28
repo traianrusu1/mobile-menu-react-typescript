@@ -1,5 +1,9 @@
+$mobileMenuWidth: 300px;
+
 .mobileMenu {
   color: #fff;
+  z-index: 200;
+
 }
 
 @media only screen and (min-width: 768px) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './MobileMenu.module.scss';
-import { Toolbar, SideDrawer } from '..';
+import { Toolbar, SideDrawer, Backdrop } from '..';
 import { SideDrawerMenuItem } from '../../interfaces/SideDrawerMenuItem';
 
 interface Props {
@@ -15,10 +15,13 @@ const MobileMenu: React.FC<Props> = ({ menuItems }: Props) => {
   };
 
   return (
-    <div className={styles.mobileMenu}>
-      <Toolbar showDrawer={showDrawer} handleToggleClick={handleToggleClick} />
-      {showDrawer && <SideDrawer menuItems={menuItems} />}
-    </div>
+    <>
+      <Backdrop show={showDrawer} onBackDropClick={handleToggleClick} />
+      <div className={styles.mobileMenu}>
+        <Toolbar showDrawer={showDrawer} handleToggleClick={handleToggleClick} />
+        {showDrawer && <SideDrawer menuItems={menuItems} />}
+      </div>
+    </>
   );
 };
 

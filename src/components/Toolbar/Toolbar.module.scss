@@ -1,16 +1,21 @@
 @import "../../appStyles/variables";
+@import "../MobileMenu/mobileMenuVariables";
+
 
 .toolbar {
   background-color: $appColor1;
   color: $fontColorWhite;
-  height: 40px;
+  height: $toolbarHeight;
+  z-index: 200;
+  box-sizing: border-box;
 
   button {
     background-color: transparent;
-    margin: 0;
-    padding: 7px 10px;
+    margin-top: 3px;
+    margin-left: 3px;
+    padding: 10px 15px;
     border: none;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     cursor: pointer;
     color: $fontColorWhite;
   }

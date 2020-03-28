@@ -1,4 +1,5 @@
 /* PLOP_INJECT_IMPORT */
+import Backdrop from './Backdrop';
 import SideDrawerMenuItem from './SideDrawerMenuItem';
 import SideDrawerMenu from './SideDrawerMenu';
 import MobileMenu from './MobileMenu';
@@ -9,6 +10,7 @@ import Layout from './Layout';
 
 export {
   /* PLOP_INJECT_EXPORT */
+	Backdrop,
 	SideDrawerMenuItem,
 	SideDrawerMenu,
 	MobileMenu,
