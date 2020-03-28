@@ -1,0 +1,12 @@
+@import "../../appStyles/variables";
+
+$drawerWidth: 200px;
+
+.sideDrawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: $drawerWidth;
+  min-height: 600px;
+  background-color: $appColor1;
+}

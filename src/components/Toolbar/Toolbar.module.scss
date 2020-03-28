@@ -1,0 +1,21 @@
+@import "../../appStyles/variables";
+
+.toolbar {
+  background-color: $appColor1;
+  height: 40px;
+
+  button {
+    background-color: transparent;
+    margin: 0;
+    padding: 10;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .toolbar {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Layout.module.css';
-import { Toolbar } from '..';
+import MobileMenu from '../MobileMenu';
 
 interface Props {
   children: React.ReactNode;
@@ -9,7 +9,8 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <div className={styles.layout}>
-      <Toolbar myProp="" />
+      <MobileMenu myProp="" />
+
       {children}
     </div>
   );

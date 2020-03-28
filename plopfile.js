@@ -23,8 +23,8 @@ module.exports = (plop) => {
       },
       {
         type: 'add',
-        path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.module.css',
-        templateFile: 'plop-templates/Component/Component.module.css.template',
+        path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss',
+        templateFile: 'plop-templates/Component/Component.module.scss.template',
       },
       {
         type: 'add',
