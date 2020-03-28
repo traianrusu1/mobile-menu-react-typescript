@@ -1,6 +1,6 @@
 module.exports = (plop) => {
-  plop.setGenerator('component', {
-    description: 'Create a reusable component',
+  plop.setGenerator('c', {
+    description: 'Create a component',
     prompts: [
       {
         type: 'input',
@@ -14,28 +14,28 @@ module.exports = (plop) => {
         // Plop will create directories for us if they do not exist
         // so it's okay to add files in nested locations.
         path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
-        templateFile: 'plop-templates/Component/Component.tsx.hbs',
+        templateFile: 'plop-templates/Component/Component.tsx.template',
       },
       {
         type: 'add',
         path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
-        templateFile: 'plop-templates/Component/Component.test.tsx.hbs',
+        templateFile: 'plop-templates/Component/Component.test.tsx.template',
       },
       {
         type: 'add',
         path: 'src/components/{{pascalCase name}}/{{pascalCase name}}.module.css',
-        templateFile: 'plop-templates/Component/Component.module.css.hbs',
+        templateFile: 'plop-templates/Component/Component.module.css.template',
       },
       {
         type: 'add',
         path: 'src/components/{{pascalCase name}}/index.tsx',
-        templateFile: 'plop-templates/Component/index.tsx.hbs',
+        templateFile: 'plop-templates/Component/index.tsx.template',
       },
       {
         // Adds an index.js file if it does not already exist
         type: 'add',
         path: 'src/components/index.tsx',
-        templateFile: 'plop-templates/injectable-index.tsx.hbs',
+        templateFile: 'plop-templates/injectable-index.tsx.template',
         // If index.js already exists in this location, skip this action
         skipIfExists: true,
       },
