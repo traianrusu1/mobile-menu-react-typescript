@@ -27,14 +27,12 @@ const SideDrawerMenu: React.FC<Props> = ({
       window.location.href = item.link;
     } else if (item.children) {
       handleShowChildMenu(!showChildMenu);
-      // debugger;
       if (parentItems?.length === 1 && item?.name === parentItems[0].name) {
         setParentItems(menuItems);
       } else {
         setParentItems([item]);
       }
       setShowChildMenu((prevState) => !prevState);
-      // debugger;
 
       if (item.name === clickedItem?.name) {
         setClickedItem(null);
@@ -53,27 +51,23 @@ const SideDrawerMenu: React.FC<Props> = ({
     }
   };
 
-  // const myHandleShowChildMenu = (params) => {};
-
-  // useEffect(() => {
-  //   setParentItems();
-  // }, [showChildMenu]);
-
   return (
     <div className={`${styles.sideDrawerMenu} ${isChildMenu ? styles.childMenu : ''}`}>
       {parentItems?.map((item) => (
         <>
-          {/* {!showChildMenu && ( */}
           <SideDrawerMenuItem
             key={item.name}
             item={item}
             onItemClick={handleItemClick}
             isHeading={clickedItem?.name === parentItems[0].name}
           />
-          {/* )} */}
 
           {showChildMenu && item.children && (
-            <div className={showChildMenu && item.children ? styles.open : styles.closed}>
+            <div
+              className={`${styles.childMenuDynamic} ${
+                showChildMenu && item.children ? styles.open : styles.closed
+              }`}
+            >
               <SideDrawerMenu
                 menuItems={item.children}
                 isChildMenu
@@ -81,7 +75,6 @@ const SideDrawerMenu: React.FC<Props> = ({
               />
             </div>
           )}
-          {/* )} */}
         </>
       ))}
     </div>

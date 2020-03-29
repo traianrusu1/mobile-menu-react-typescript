@@ -7,15 +7,35 @@
 
 .childMenu {
   background-color: $appColor2;
-  transition: transform 0.5s ease-out !important;
+}
+
+.childMenuDynamic {
+  background-color: red;
   position: relative;
   left: -200px;
 }
 
 .open {
-  transform: translateX(200px);
+  animation: slide-in 0.3s ease 0s 1 normal forwards;
 }
 
 .closed {
-  transform: translateX(0);
+  animation: slide-out 0.3s ease 0s 1 normal forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes slide-out {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -200px;
+  }
 }

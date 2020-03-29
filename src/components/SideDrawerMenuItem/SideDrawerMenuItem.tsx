@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './SideDrawerMenuItem.module.scss';
 import { SideDrawerMenuItem as SideDrawerMenuItemInterface } from '../../interfaces/SideDrawerMenuItem';
 
@@ -14,7 +14,7 @@ const SideDrawerMenuItem: React.FC<Props> = ({ item, onItemClick, isHeading }: P
   return (
     <button
       type="button"
-      className={styles.sideDrawerMenuItem}
+      className={`${styles.sideDrawerMenuItem} ${isHeading ? styles.headingItemColor : ''}`}
       onClick={(): void => {
         onItemClick(item);
       }}
@@ -22,7 +22,7 @@ const SideDrawerMenuItem: React.FC<Props> = ({ item, onItemClick, isHeading }: P
       {item.name}
       {item?.children?.length && item?.children?.length > 0 && (
         <div className={styles.showChildMenuButton}>
-          <FontAwesomeIcon icon={isHeading ? faAngleLeft : faAngleRight} size="2x" />
+          <FontAwesomeIcon icon={isHeading ? faAngleDown : faAngleRight} size="2x" />
         </div>
       )}
     </button>
