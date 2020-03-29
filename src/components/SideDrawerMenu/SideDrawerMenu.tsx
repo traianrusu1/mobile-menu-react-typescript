@@ -18,6 +18,9 @@ const SideDrawerMenu: React.FC<Props> = ({
 }: Props) => {
   const [showChildMenu, setShowChildMenu] = useState(showChildrenMenu);
   const [parentItems, setParentItems] = useState<SideDrawerMenuItemInterface[] | null>(menuItems);
+  const [prevParentItems, setPrevParentItems] = useState<SideDrawerMenuItemInterface[] | null>(
+    menuItems,
+  );
   const [clickedItem, setClickedItem] = useState<SideDrawerMenuItemInterface | null>(null);
   const handleItemClick = (item: SideDrawerMenuItemInterface): void => {
     if (item.link) {
@@ -43,8 +46,10 @@ const SideDrawerMenu: React.FC<Props> = ({
 
   const handleShowChildMenuInner = (show: boolean): void => {
     // debugger;
-    if (show) {
-      setParentItems(menuItems);
+    if (!show) {
+      setParentItems(prevParentItems);
+    } else {
+      setPrevParentItems(parentItems);
     }
   };
 
@@ -68,11 +73,7 @@ const SideDrawerMenu: React.FC<Props> = ({
           {/* )} */}
 
           {showChildMenu && item.children && (
-            <div
-              className={`${styles.childMenu} ${
-                showChildMenu && item.children ? styles.open : styles.closed
-              }`}
-            >
+            <div className={showChildMenu && item.children ? styles.open : styles.closed}>
               <SideDrawerMenu
                 menuItems={item.children}
                 isChildMenu

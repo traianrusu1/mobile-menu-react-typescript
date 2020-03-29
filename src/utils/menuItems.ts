@@ -11,11 +11,42 @@ const menuItems: SideDrawerMenuItem[] = [
         children: [
           {
             name: 'Trackpads',
+            link: null,
+            children: [
+              {
+                name: 'Trackpads1',
+                link: 'https://www.google.ca',
+                children: null,
+              },
+              {
+                name: 'Trackpads2',
+                link: 'https://www.google.ca',
+                children: null,
+              },
+              {
+                name: 'Trackpads3',
+                link: 'https://www.google.ca',
+                children: null,
+              },
+              {
+                name: 'Trackpads4',
+                link: 'https://www.google.ca',
+                children: null,
+              },
+            ],
+          },
+          {
+            name: 'Stands',
             link: 'https://www.google.ca',
             children: null,
           },
           {
-            name: 'Stands',
+            name: 'Dongles',
+            link: 'https://www.google.ca',
+            children: null,
+          },
+          {
+            name: 'Cases',
             link: 'https://www.google.ca',
             children: null,
           },

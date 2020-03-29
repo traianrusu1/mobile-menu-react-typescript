@@ -7,13 +7,13 @@
 
 .childMenu {
   background-color: $appColor2;
-  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out !important;
   position: relative;
   left: -200px;
 }
 
 .open {
-  transform: translateX(400px);
+  transform: translateX(200px);
 }
 
 .closed {
