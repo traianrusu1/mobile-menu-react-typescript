@@ -1,8 +1,8 @@
-@import '../MobileMenu/mobileMenuVariables';
+@import "../MobileMenu/mobileMenuVariables";
 
 .backdrop {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 100;
   left: 0;

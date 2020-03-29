@@ -1,13 +1,21 @@
 @import "../../appStyles/variables";
-
-$drawerWidth: 200px;
+@import "../MobileMenu/mobileMenuVariables";
 
 .sideDrawer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  width: $drawerWidth;
+  position: absolute;
+  left: calc(#{$sideDrawerWidth} * -1);
+  top: $toolbarHeight;
+  width: $sideDrawerWidth;
   min-height: 600px;
   background-color: $appColor1;
   z-index: 200;
+  transition: transform 0.3s ease-out;
+}
+
+.open {
+  transform: translateX($sideDrawerWidth);
+}
+
+.closed {
+  transform: translateX(0);
 }

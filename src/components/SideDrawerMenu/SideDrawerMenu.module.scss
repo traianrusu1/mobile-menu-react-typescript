@@ -1,1 +1,21 @@
-.sideDrawerMenu {}
+@import "../../appStyles/variables";
+@import "../MobileMenu/mobileMenuVariables";
+.sideDrawerMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.childMenu {
+  background-color: $appColor2;
+  transition: transform 0.5s ease-out;
+  position: relative;
+  left: -200px;
+}
+
+.open {
+  transform: translateX(400px);
+}
+
+.closed {
+  transform: translateX(0);
+}

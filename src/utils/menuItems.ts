@@ -6,6 +6,22 @@ const menuItems: SideDrawerMenuItem[] = [
     link: null,
     children: [
       {
+        name: 'Laptops',
+        link: null,
+        children: [
+          {
+            name: 'Trackpads',
+            link: 'https://www.google.ca',
+            children: null,
+          },
+          {
+            name: 'Stands',
+            link: 'https://www.google.ca',
+            children: null,
+          },
+        ],
+      },
+      {
         name: 'Monitors',
         link: 'https://www.google.ca',
         children: null,

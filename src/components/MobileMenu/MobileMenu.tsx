@@ -19,7 +19,7 @@ const MobileMenu: React.FC<Props> = ({ menuItems }: Props) => {
       <Backdrop show={showDrawer} onBackDropClick={handleToggleClick} />
       <div className={styles.mobileMenu}>
         <Toolbar showDrawer={showDrawer} handleToggleClick={handleToggleClick} />
-        {showDrawer && <SideDrawer menuItems={menuItems} />}
+        <SideDrawer menuItems={menuItems} isOpen={showDrawer} />
       </div>
     </>
   );

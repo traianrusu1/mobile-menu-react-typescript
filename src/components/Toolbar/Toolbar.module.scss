@@ -18,5 +18,18 @@
     // margin-bottom: 10px;
     cursor: pointer;
     color: $fontColorWhite;
+    transition: transform 0.3s ease-out;
   }
+
+
+
+
+  .open {
+    transform: translateX(calc(#{$sideDrawerWidth} - 50px));
+  }
+
+  .closed {
+    transform: translateX(0);
+  }
+
 }
