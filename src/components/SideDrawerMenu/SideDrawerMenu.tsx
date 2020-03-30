@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import styles from './SideDrawerMenu.module.scss';
 import { SideDrawerMenuItem as SideDrawerMenuItemInterface } from '../../interfaces/SideDrawerMenuItem';
 import { SideDrawerMenuItem } from '..';
+import { MobileMenuConfig } from '../../interfaces/MobileMenuConfig';
+import useCustomConfig from '../../hooks/useCustomConfig';
 
 interface Props {
   menuItems: SideDrawerMenuItemInterface[] | null;
   handleShowChildMenu: (show: boolean) => void;
   showChildrenMenu?: boolean;
   isChildMenu?: boolean;
+  config?: MobileMenuConfig;
 }
 
 const SideDrawerMenu: React.FC<Props> = ({
@@ -15,6 +18,7 @@ const SideDrawerMenu: React.FC<Props> = ({
   handleShowChildMenu,
   showChildrenMenu = false,
   isChildMenu = false,
+  config,
 }: Props) => {
   const [showChildMenu, setShowChildMenu] = useState(showChildrenMenu);
   const [parentItems, setParentItems] = useState<SideDrawerMenuItemInterface[] | null>(menuItems);
@@ -22,6 +26,8 @@ const SideDrawerMenu: React.FC<Props> = ({
     menuItems,
   );
   const [clickedItem, setClickedItem] = useState<SideDrawerMenuItemInterface | null>(null);
+  const customStyles = useCustomConfig(config, ['secondaryColor']);
+
   const handleItemClick = (item: SideDrawerMenuItemInterface): void => {
     if (item.link) {
       window.location.href = item.link;
@@ -52,7 +58,10 @@ const SideDrawerMenu: React.FC<Props> = ({
   };
 
   return (
-    <div className={`${styles.sideDrawerMenu} ${isChildMenu ? styles.childMenu : ''}`}>
+    <div
+      className={`${styles.sideDrawerMenu} ${isChildMenu ? styles.childMenu : ''}`}
+      style={isChildMenu ? customStyles : undefined}
+    >
       {parentItems?.map((item) => (
         <>
           <SideDrawerMenuItem
@@ -72,6 +81,7 @@ const SideDrawerMenu: React.FC<Props> = ({
                 menuItems={item.children}
                 isChildMenu
                 handleShowChildMenu={handleShowChildMenuInner}
+                config={config}
               />
             </div>
           )}

@@ -4,7 +4,7 @@
 
 .toolbar {
   background-color: $appColor1;
-  color: $fontColorWhite;
+  // color: $fontColorWhite;
   height: $toolbarHeight;
   z-index: 200;
   box-sizing: border-box;
@@ -17,7 +17,7 @@
     border: none;
     // margin-bottom: 10px;
     cursor: pointer;
-    color: $fontColorWhite;
+    color: inherit;
     transition: transform 0.3s ease-out;
   }
 

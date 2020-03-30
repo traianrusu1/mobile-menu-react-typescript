@@ -10,7 +10,16 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <div className={styles.layout}>
-      <MobileMenu menuItems={menuItems} />
+      <MobileMenu
+        menuItems={menuItems}
+        config={{
+          primaryColor: 'red',
+          secondaryColor: 'blue',
+          fontColor: 'yellow',
+          sideDrawerWidth: '500px',
+          toolbarHeight: '200px',
+        }}
+      />
       {children}
     </div>
   );

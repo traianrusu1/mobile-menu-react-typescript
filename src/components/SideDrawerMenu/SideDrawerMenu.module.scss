@@ -1,5 +1,6 @@
 @import "../../appStyles/variables";
 @import "../MobileMenu/mobileMenuVariables";
+
 .sideDrawerMenu {
   display: flex;
   flex-direction: column;
@@ -10,9 +11,10 @@
 }
 
 .childMenuDynamic {
-  background-color: red;
+  // background-color: red;
   position: relative;
-  left: -200px;
+  left: calc(#{$sideDrawerWidth} * -1);
+
 }
 
 .open {
@@ -25,17 +27,20 @@
 
 @keyframes slide-in {
   0% {
-    left: -200px;
+    left: calc(#{$sideDrawerWidth} * -1);
   }
+
   100% {
     left: 0;
   }
 }
+
 @keyframes slide-out {
   0% {
     left: 0px;
   }
+
   100% {
-    left: -200px;
+    left: calc(#{$sideDrawerWidth} * -1);
   }
 }
