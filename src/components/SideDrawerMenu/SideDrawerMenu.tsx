@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './SideDrawerMenu.module.scss';
 import { SideDrawerMenuItem as SideDrawerMenuItemInterface } from '../../interfaces/SideDrawerMenuItem';
 import { SideDrawerMenuItem } from '..';
-import { MobileMenuConfig } from '../../interfaces/MobileMenuConfig';
 import useCustomConfig from '../../hooks/useCustomConfig';
+import ConfigContext from '../../contexts/ConfigContext';
 
 interface Props {
   menuItems: SideDrawerMenuItemInterface[] | null;
   handleShowChildMenu: (show: boolean) => void;
   showChildrenMenu?: boolean;
   isChildMenu?: boolean;
-  config?: MobileMenuConfig;
 }
 
 const SideDrawerMenu: React.FC<Props> = ({
@@ -18,8 +17,8 @@ const SideDrawerMenu: React.FC<Props> = ({
   handleShowChildMenu,
   showChildrenMenu = false,
   isChildMenu = false,
-  config,
 }: Props) => {
+  const config = useContext(ConfigContext);
   const [showChildMenu, setShowChildMenu] = useState(showChildrenMenu);
   const [parentItems, setParentItems] = useState<SideDrawerMenuItemInterface[] | null>(menuItems);
   const [prevParentItems, setPrevParentItems] = useState<SideDrawerMenuItemInterface[] | null>(
@@ -81,7 +80,6 @@ const SideDrawerMenu: React.FC<Props> = ({
                 menuItems={item.children}
                 isChildMenu
                 handleShowChildMenu={handleShowChildMenuInner}
-                config={config}
               />
             </div>
           )}

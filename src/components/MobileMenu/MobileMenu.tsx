@@ -4,6 +4,7 @@ import { Toolbar, SideDrawer, Backdrop } from '..';
 import { SideDrawerMenuItem } from '../../interfaces/SideDrawerMenuItem';
 import { MobileMenuConfig } from '../../interfaces/MobileMenuConfig';
 import useCustomConfig from '../../hooks/useCustomConfig';
+import ConfigContext from '../../contexts/ConfigContext';
 
 interface Props {
   menuItems: SideDrawerMenuItem[];
@@ -20,11 +21,13 @@ const MobileMenu: React.FC<Props> = ({ menuItems, config }: Props) => {
 
   return (
     <>
-      <Backdrop show={showDrawer} onBackDropClick={handleToggleClick} />
-      <div style={customStyles} className={styles.mobileMenu}>
-        <Toolbar showDrawer={showDrawer} handleToggleClick={handleToggleClick} />
-        <SideDrawer menuItems={menuItems} isOpen={showDrawer} config={config} />
-      </div>
+      <ConfigContext.Provider value={config}>
+        <Backdrop show={showDrawer} onBackDropClick={handleToggleClick} />
+        <div style={customStyles} className={styles.mobileMenu}>
+          <Toolbar showDrawer={showDrawer} handleToggleClick={handleToggleClick} />
+          <SideDrawer menuItems={menuItems} isOpen={showDrawer} />
+        </div>
+      </ConfigContext.Provider>
     </>
   );
 };
