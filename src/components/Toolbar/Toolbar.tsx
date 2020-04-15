@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from './Toolbar.module.scss';
-// import { HamburgerMenu } from '..';
+import ConfigContext from '../../contexts/ConfigContext';
+import useCustomConfig from '../../hooks/useCustomConfig';
 
 interface Props {
   showDrawer: boolean;
@@ -10,8 +11,10 @@ interface Props {
 }
 
 const Toolbar: React.FC<Props> = ({ showDrawer, handleToggleClick }: Props) => {
+  const config = useContext(ConfigContext);
+  const customStyles = useCustomConfig(config, ['primaryColor']);
   return (
-    <div className={styles.toolbar}>
+    <div className={styles.toolbar} style={customStyles}>
       <button
         type="button"
         onClick={handleToggleClick}
