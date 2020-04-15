@@ -13,9 +13,9 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
       <MobileMenu
         menuItems={menuItems}
         config={{
-          primaryColor: 'red',
-          secondaryColor: 'blue',
-          fontColor: 'yellow',
+          primaryColor: '#6ba1ce',
+          secondaryColor: '#5675a5',
+          fontColor: '#fff',
           sideDrawerWidth: '500px',
           toolbarHeight: '200px',
         }}

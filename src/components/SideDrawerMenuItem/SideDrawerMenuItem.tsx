@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import styles from './SideDrawerMenuItem.module.scss';
 import { SideDrawerMenuItem as SideDrawerMenuItemInterface } from '../../interfaces/SideDrawerMenuItem';
+import ConfigContext from '../../contexts/ConfigContext';
+import useCustomConfig from '../../hooks/useCustomConfig';
 
 interface Props {
   item: SideDrawerMenuItemInterface;
@@ -11,10 +13,13 @@ interface Props {
 }
 
 const SideDrawerMenuItem: React.FC<Props> = ({ item, onItemClick, isHeading }: Props) => {
+  const config = useContext(ConfigContext);
+  const customStyles = useCustomConfig(config, ['primaryColor']);
   return (
     <button
       type="button"
       className={`${styles.sideDrawerMenuItem} ${isHeading ? styles.headingItemColor : ''}`}
+      style={isHeading ? customStyles : undefined}
       onClick={(): void => {
         onItemClick(item);
       }}

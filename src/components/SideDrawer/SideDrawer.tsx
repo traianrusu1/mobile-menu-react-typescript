@@ -12,7 +12,7 @@ interface Props {
 
 const SideDrawer: React.FC<Props> = ({ menuItems, isOpen }: Props) => {
   const config = useContext(ConfigContext);
-  const customStyles = useCustomConfig(config, ['primaryColor']);
+  const customStyles = useCustomConfig(config, ['secondaryColor']);
   const [, setShowChildMenu] = useState(false);
   const [myMenuItems, setMyMenuItems] = useState(menuItems);
 
